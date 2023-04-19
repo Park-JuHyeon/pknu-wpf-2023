@@ -32,6 +32,6 @@
             </ComboBox.RenderTransform>
         </ComboBox>
         <!-- 주석 == html주석과 동일-->
-        <Button x:Name="BtnNew" Content="신규" Width="80" Height="35" Click="BtnNew_Click" Margin="155,103,155,103" Grid.ColumnSpan="2" />
+        <Button x:Name="BtnNew" Content="신규" Width="80" Height="35" Click="BtnNew_Click" Margin="155,160,155,46" Grid.ColumnSpan="2" />
     </Grid>
 </Window>
