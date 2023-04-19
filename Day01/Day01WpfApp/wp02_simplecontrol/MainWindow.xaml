@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wp02_simplecontrol"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="250">
+        Title="MainWindow" Height="400" Width="250" Loaded="Window_Loaded">
     <StackPanel>
         <TextBlock Text="텍스트블럭" Width="100" />
         <Label Content="라벨영역" Width="100"/>
@@ -15,7 +15,7 @@
         <ProgressBar x:Name="PgbStep" Value="4" Width="100" Height="15" Maximum="10"/>
 
         <Image Source="Resources/xaml.png" Height="40" />
-        <MediaElement Source="C:/Temp/video.mp4" Width="200" Height="100" LoadedBehavior="Play"/>
+        <MediaElement x:Name="MediaPlayer"  Source="" Width="180" Height="100" LoadedBehavior="Manual"/>
     </StackPanel>
 
 </Window>
