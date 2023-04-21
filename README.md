@@ -28,8 +28,10 @@
 	- 데이터바인딩 DB연동
 	
 4일차 MVVM View
-<img src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/
-wpf-01.png width = 700"
+
+<img 
+src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/
+wpf-01.png" width = "700">
 	
 	
 	
