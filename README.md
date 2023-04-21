@@ -25,6 +25,9 @@
 - WPF 응용
 	- MahApps.Metro 디자인 적용
 	- MVVM 패턴
+	- 데이터바인딩 DB연동
+	
+
 	
 	
 	
