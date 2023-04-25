@@ -33,5 +33,17 @@
 src=https://"raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/wpf-01.png" width = "700">
 	
 	
+## 6일차
+- WPF 응용
+	- 영화API 검색 앱
+		- TMDB OpenAPI
+		- MahApps.Metro
+		- MahApps.Metro.IconPacks
+		- Newtonsoft.Json
+
+<영화 검색 앱 중간>
 	
+<img
+src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/MovieFinder0.5.png" 
+width = "700">
 	
