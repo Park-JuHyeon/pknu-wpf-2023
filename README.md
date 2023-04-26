@@ -48,3 +48,16 @@ width = "700">
 src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/MovieFinder0.5.png" 
 width = "700">
 	
+## 7일차
+- WPF 응용
+	- 영화검색앱
+		- CefSharp.WPF
+		- 화면정리
+		- Youtube OpenAPI연동
+		- DB 데이터바인딩
+		
+<영화 검색 앱 부분완료>
+
+<img
+src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/MovieFinder.png" 
+width = "700">
