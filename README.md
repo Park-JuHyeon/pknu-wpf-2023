@@ -61,3 +61,14 @@ width = "700">
 <img
 src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/MovieFinder.png" 
 width = "700">
+
+## 8일차
+- WPF 응용
+	- 영화검색앱 완료
+		- DB 데이터바인딩(MySQL)
+		
+영화검색앱
+
+<img
+src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/movieFinder.gif" 
+width = "700">
