@@ -66,6 +66,10 @@ width = "700">
 - WPF 응용
 	- 영화검색앱 완료
 		- DB 데이터바인딩(MySQL)
+	- 미세먼지확인 앱 개발
+		- MahApps.Metro
+		- 데이터포털 OpenAPI
+		- DB 데이터바인딩(MySQL)
 		
 영화검색앱
 
