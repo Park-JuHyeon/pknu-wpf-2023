@@ -3,18 +3,10 @@ using MahApps.Metro.Controls.Dialogs;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace wp11_moviefinder.Logics
+namespace Busan.Logics
 {
     public class Commons
     {
-        // 연결문자열 담을 변수
-        // SQL Server용
-        public static readonly string connString = "Data Source=localhost;" +
-                                                   "Initial Catalog = pknu;" +
-                                                   "Persist Security Info=True;" +
-                                                   "User ID = sa;" +
-                                                   "Password=12345;";
-
         // MySQL용
         public static readonly string myConnString = "Server=localhost;" +
                                                      "Port=3306;" +
@@ -28,5 +20,6 @@ namespace wp11_moviefinder.Logics
         {
             return await ((MetroWindow)Application.Current.MainWindow).ShowMessageAsync(title, message, style, null);
         }
+
     }
 }

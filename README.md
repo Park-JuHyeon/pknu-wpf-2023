@@ -89,7 +89,7 @@ width = "700">
 		- MahApps.Metro
 		- 데이터포털 OpenAPI
 		- DB 데이터바인딩(MySQL)
-	- 개인 포트폴리오 개발방식
+	- 개인 포트폴리오 개발
 		- 데이터포털 OpenAPI
-		- 네이버, 카카오 OpenAPI
+		- 네이버,구글,카카오 OpenAPI
 		- 기타 OpenAPI

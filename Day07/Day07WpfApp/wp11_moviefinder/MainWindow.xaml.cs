@@ -521,6 +521,8 @@ namespace wp11_moviefinder
 
             BtnViewFavorite_Click(sender, e);   // 즐겨찾기 보기 이벤트핸들러를 한번 실행
         }
+
+        
     }
 }
 
