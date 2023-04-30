@@ -38,7 +38,7 @@
             <Label Grid.Column="0" Content="부산 추천 관광지 List" FontSize="16" FontWeight="Bold" Margin="5,5,5,5" Grid.ColumnSpan="3" Foreground="Brown" />
             
             <Button Grid.Column="1" Grid.Row="0" x:Name="BtnShowAll" FontSize="10"  Margin="3,5"
-                    Content="전체조회" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Click="BtnShowAll_Click" />
+                    Content="전체조회" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Click="BtnShowAll_Click" RenderTransformOrigin="0.5,0.5" />
             
             <TextBox Grid.Row="0" Grid.Column="2" x:Name="TxtSectorName" Grid.ColumnSpan="1" Margin="5,5,5,5"
                      mah:TextBoxHelper.Watermark="검색할 지역구 입력"

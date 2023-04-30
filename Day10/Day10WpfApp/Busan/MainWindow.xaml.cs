@@ -52,7 +52,7 @@ namespace Busan
         {
             if (string.IsNullOrEmpty(TxtSectorName.Text))
             {
-                await Commons.ShowMessageAsync("검색", "검색할 영화명을 입력하세요.");
+                await Commons.ShowMessageAsync("검색", "검색할 지역명을 입력하세요.");
                 return;
             }
 
@@ -110,10 +110,10 @@ namespace Busan
 
             // result를 json으로 변경
             var jsonResult = JObject.Parse(result);
-            var total = Convert.ToInt32(jsonResult["total_results"]);       // 전체 검색결과 수
+            //var total = Convert.ToInt32(jsonResult["total_results"]);       // 전체 검색결과 수
 
             // await Commons.ShowMessageAsync("검색 결과", total.ToString());
-            var items = jsonResult["results"];
+            var items = jsonResult["result"];
             // items를 데이터그리드에 표시
             var json_array = items as JArray;
 
@@ -122,22 +122,22 @@ namespace Busan
             {
                 var SectorItem = new SectorItem() 
                 {
-                    UC_SEQ = Convert.ToInt32(val["uc_seq"]),
-                    MAIN_TITLE = Convert.ToString(val["main_title"]),
-                    GUGUN_NM = Convert.ToString(val["gugun_nm"]),
-                    LAT = Convert.ToDouble(val["lat"]),
-                    LNG = Convert.ToDouble(val["lng"]),
-                    PLACE = Convert.ToString(val["place"]),
-                    TITLE = Convert.ToString(val["title"]),
-                    SUBTITLE = Convert.ToString(val["subtitle"]),
-                    ADDR1 = Convert.ToString(val["addr1"]),
-                    HOMEPAGE_URL = Convert.ToString(val["homepage_url"]),
-                    TRFC_INFO = Convert.ToString(val["trfc_info"]),
-                    USAGE_DAY_WEEK_AND_TIME = Convert.ToString(val["usage_day_week_and_time"]),
-                    USAGE_AMOUNT = Convert.ToString(val["usage_amount"]),
-                    MIDDLE_SIZE_RM1 = Convert.ToString(val["middle_size_rm1"]),
-                    MAIN_IMG_PATH = Convert.ToString(val["main_img_path"]),
-                    ITEMCNTNTS = Convert.ToString(val["itemcntnts"]),
+                    UC_SEQ = Convert.ToInt32(val["UC_SEQ"]),
+                    MAIN_TITLE = Convert.ToString(val["MAIN_TITLE"]),
+                    GUGUN_NM = Convert.ToString(val["GUGUN_NM"]),
+                    LAT = Convert.ToDouble(val["LAT"]),
+                    LNG = Convert.ToDouble(val["LNG"]),
+                    PLACE = Convert.ToString(val["PLACE"]),
+                    TITLE = Convert.ToString(val["TITLE"]),
+                    SUBTITLE = Convert.ToString(val["SUBTITLE"]),
+                    ADDR1 = Convert.ToString(val["ADDR1"]),
+                    HOMEPAGE_URL = Convert.ToString(val["HOMEPAGE_URL"]),
+                    TRFC_INFO = Convert.ToString(val["TRFC_INFO"]),
+                    USAGE_DAY_WEEK_AND_TIME = Convert.ToString(val["USAGE_DAY_WEEK_AND_TIME"]),
+                    USAGE_AMOUNT = Convert.ToString(val["USAGE_AMOUNT"]),
+                    MIDDLE_SIZE_RM1 = Convert.ToString(val["MIDDLE_SIZE_RM1"]),
+                    MAIN_IMG_PATH = Convert.ToString(val["MAIN_IMG_PATH"]),
+                    ITEMCNTNTS = Convert.ToString(val["ITEMCNTNTS"]),
                 };
                 sectorItems.Add(SectorItem) ;
 
@@ -153,7 +153,7 @@ namespace Busan
             string Data_apiKey = "%2BSpE28mAXdWeJytRNqmFNB726xFOlifgTDbtsDCCIe7s6MMsNwUGHj9lz4R%2Bm6PaZDysLHw70T3PhiRzEPbjSA%3D%3D";
 
             string openApiUri = $@"https://apis.data.go.kr/6260000/AttractionService/getAttractionKr?serviceKey={Data_apiKey}" +
-                                    $"&pageNo=1&numOfRows=123&resultType=json";
+                                    $"&pageNo=1&numOfRows=5&resultType=json";
             string result = string.Empty;   // 결과값 초기화
 
             WebRequest req = null;
@@ -191,22 +191,22 @@ namespace Busan
 
                         dustSensors.Add(new SectorItem
                         {
-                            UC_SEQ = Convert.ToInt32(sensor["uc_seq"]),
-                            MAIN_TITLE = Convert.ToString(sensor["main_title"]),
-                            GUGUN_NM = Convert.ToString(sensor["gugun_nm"]),
-                            LAT = Convert.ToDouble(sensor["lat"]),
-                            LNG = Convert.ToDouble(sensor["lng"]),
-                            PLACE = Convert.ToString(sensor["place"]),
-                            TITLE = Convert.ToString(sensor["title"]),
-                            SUBTITLE = Convert.ToString(sensor["subtitle"]),
-                            ADDR1 = Convert.ToString(sensor["addr1"]),
-                            HOMEPAGE_URL = Convert.ToString(sensor["homepage_url"]),
-                            TRFC_INFO = Convert.ToString(sensor["trfc_info"]),
-                            USAGE_DAY_WEEK_AND_TIME = Convert.ToString(sensor["usage_day_week_and_time"]),
-                            USAGE_AMOUNT = Convert.ToString(sensor["usage_amount"]),
-                            MIDDLE_SIZE_RM1 = Convert.ToString(sensor["middle_size_rm1"]),
-                            MAIN_IMG_PATH = Convert.ToString(sensor["main_img_path"]),
-                            ITEMCNTNTS = Convert.ToString(sensor["itemcntnts"]),
+                            UC_SEQ = Convert.ToInt32(sensor["UC_SEQ"]),
+                            MAIN_TITLE = Convert.ToString(sensor["MAIN_TITLE"]),
+                            GUGUN_NM = Convert.ToString(sensor["GUGUN_NM"]),
+                            LAT = Convert.ToDouble(sensor["LAT"]),
+                            LNG = Convert.ToDouble(sensor["LNG"]),
+                            PLACE = Convert.ToString(sensor["PLACE"]),
+                            TITLE = Convert.ToString(sensor["TITLE"]),
+                            SUBTITLE = Convert.ToString(sensor["SUBTITLE"]),
+                            ADDR1 = Convert.ToString(sensor["ADDR1"]),
+                            HOMEPAGE_URL = Convert.ToString(sensor["HOMEPAGE_URL"]),
+                            TRFC_INFO = Convert.ToString(sensor["TRFC_INFO"]),
+                            USAGE_DAY_WEEK_AND_TIME = Convert.ToString(sensor["USAGE_DAY_WEEK_AND_TIME"]),
+                            USAGE_AMOUNT = Convert.ToString(sensor["USAGE_AMOUNT"]),
+                            MIDDLE_SIZE_RM1 = Convert.ToString(sensor["MIDDLE_SIZE_RM1"]),
+                            MAIN_IMG_PATH = Convert.ToString(sensor["MAIN_IMG_PATH"]),
+                            ITEMCNTNTS = Convert.ToString(sensor["ITEMCNTNTS"]),
 
                         });
                     }
