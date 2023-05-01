@@ -84,7 +84,7 @@ namespace wp11_moviefinder
             string tmdb_apiKey = "0bf536337a690bf3cda12ed6a85c8f31";
             string encoding_movieName = HttpUtility.UrlEncode(movieName, Encoding.UTF8);
             string openApiUri = $@"https://api.themoviedb.org/3/search/movie?api_key={tmdb_apiKey}" +
-                                 $"&language=ko-KR&page=1&include_adult=false&query={encoding_movieName}";    // 네이버 검색 URL
+                                 $"&language=ko-KR&page=1&include_adult=false&query={encoding_movieName}";    
             string result = string.Empty;   // 결과값 초기화
 
             // api 실행할 객체
@@ -522,7 +522,10 @@ namespace wp11_moviefinder
             BtnViewFavorite_Click(sender, e);   // 즐겨찾기 보기 이벤트핸들러를 한번 실행
         }
 
-        
+        private void GrdResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
 

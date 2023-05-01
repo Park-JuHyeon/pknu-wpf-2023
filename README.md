@@ -93,3 +93,15 @@ width = "700">
 		- 데이터포털 OpenAPI
 		- 네이버,구글,카카오 OpenAPI
 		- 기타 OpenAPI
+
+9일차 미세먼지 확인 앱
+
+## 10일차
+- WPF 응용
+	- 개인 포트폴리오 완료(부산 대표 관광지 검색 및 설명 위치확인)
+		- 데이터포털 OpenAPI
+		- MahApps.Metro
+		
+<img
+src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/wpf-exam.gif" 
+width = "700">

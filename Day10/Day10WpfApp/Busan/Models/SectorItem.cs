@@ -22,7 +22,7 @@ namespace Busan.Models
         public string USAGE_DAY_WEEK_AND_TIME { get; set; }
         public string USAGE_AMOUNT { get; set; }
         public string MIDDLE_SIZE_RM1 { get; set; }
-        public string MAIN_IMG_PATH { get; set; }
+        public string MAIN_IMG_NORMAL { get; set; }
         public string ITEMCNTNTS { get; set; }
 
     }

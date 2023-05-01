@@ -8,7 +8,7 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:Busan"
         mc:Ignorable="d"
-        Title="Busan Tour" Height="450" Width="800" MinHeight="400" MinWidth="700">
+        Title="Busan Tour" Height="450" Width="800" MinHeight="400" MinWidth="700" Loaded="MetroWindow_Loaded">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconWeatherIcons Kind="Dust" Margin="5,7,0,0" Foreground="White"/>
@@ -18,7 +18,7 @@
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="103*"/>
-            <ColumnDefinition Width="53*"/>
+            
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -28,52 +28,64 @@
 
         <Grid Grid.Row="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="180*"/>
-                <ColumnDefinition Width="59*"/>
+                <ColumnDefinition Width="150*"/>
+                
                 <ColumnDefinition Width="411*"/>
 
-                <ColumnDefinition Width="130"/>
+                
             </Grid.ColumnDefinitions>
 
             <Label Grid.Column="0" Content="부산 추천 관광지 List" FontSize="16" FontWeight="Bold" Margin="5,5,5,5" Grid.ColumnSpan="3" Foreground="Brown" />
             
-            <Button Grid.Column="1" Grid.Row="0" x:Name="BtnShowAll" FontSize="10"  Margin="3,5"
-                    Content="전체조회" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Click="BtnShowAll_Click" RenderTransformOrigin="0.5,0.5" />
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+
+                <Button x:Name="BtnShowAll" FontSize="10"  Margin="3,5"
+                    Content="전체조회" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Click="BtnShowAll_Click" RenderTransformOrigin="0.5,0.5" 
+                    HorizontalAlignment="Stretch"/>
+
+                <ComboBox x:Name="CboSectorLoc" Margin="5" Width="300" Style="{StaticResource MahApps.Styles.ComboBox}"
+                          mah:TextBoxHelper.Watermark="관광지 위치 선택"
+                          mah:TextBoxHelper.UseFloatingWatermark="True"
+                          mah:TextBoxHelper.ClearTextButton="True" SelectionChanged="CboSectorLoc_SelectionChanged" />
+
+                <Button x:Name="BtnSaveData" Content="저장" Margin="5" Width="60" Style="{StaticResource MahApps.Styles.Button.Square.Highlight}" Click="BtnSaveData_Click"/>
+
+                <Button x:Name="BtnSearchSector" FontSize="14" Margin="5,10,5,10"
+                    Content="위치 확인" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Click="BtnSearchSector_Click">
+                    <Button.ContentTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <iconPacks:PackIconModern Kind="Magnify" Margin="5"/>
+                                <TextBlock Text="{Binding}" Margin="5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Button.ContentTemplate>
+                </Button>
+
+            </StackPanel>
             
-            <TextBox Grid.Row="0" Grid.Column="2" x:Name="TxtSectorName" Grid.ColumnSpan="1" Margin="5,5,5,5"
-                     mah:TextBoxHelper.Watermark="검색할 지역구 입력"
-                     mah:TextBoxHelper.UseFloatingWatermark="True"
-                     mah:TextBoxHelper.ClearTextButton="True"
-                     InputMethod.PreferredImeState="On"
-                     InputMethod.PreferredImeConversionMode="Native"
-                     KeyDown="TxtSectorName_KeyDown" />
-
-            <Button Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="1" x:Name="BtnSearchSector" FontSize="14" Margin="5,10,5,10"
-                    Content="검색" Style="{StaticResource MahApps.Styles.Button.Square.Accent}" Click="BtnSearchSector_Click">
-                <Button.ContentTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <iconPacks:PackIconModern Kind="Magnify" Margin="5"/>
-                            <TextBlock Text="{Binding}" Margin="5"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </Button.ContentTemplate>
-            </Button>
 
         </Grid>
 
-        <Grid Grid.Row ="1" Grid.Column="1" Grid.RowSpan="2">
-            <GroupBox Header="대표이미지" Margin="10" mah:HeaderedControlHelper.HeaderFontSize="14"
-                      mah:HeaderedControlHelper.HeaderHorizontalContentAlignment="Center"
-                      mah:HeaderedControlHelper.HeaderFontWeight="Bold">
-
-                <Image x:Name="ImgPoster" Source="No_Picture.png" Margin="15,5" />
-            </GroupBox>
-        </Grid>
-
-        <DataGrid Grid.Row="1" Grid.Column="0" x:Name="GrdResult" Margin="5,5"
+        <DataGrid Grid.Row="1" Grid.Column="0" x:Name="GrdResult" Margin="5,5" 
+                  AutoGenerateColumns="False"
                   IsReadOnly="True" Style="{StaticResource MahApps.Styles.DataGrid.Azure}"
-                  ItemsSource="{Binding}" MouseDoubleClick="GrdResult_MouseDoubleClick"/>
+                  ItemsSource="{Binding}" MouseDoubleClick="GrdResult_MouseDoubleClick"
+                  SelectedCellsChanged="GrdResult_SelectedCellsChanged" AlternatingRowBackground="BurlyWood" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding UC_SEQ}" Header="관광지번호" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding GUGUN_NM}" Header="구군명" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding PLACE}" Header="관광지명" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding TITLE}" Header="소제목" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding SUBTITLE}" Header="부제" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding ADDR1}" Header="주소" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding TRFC_INFO}" Header="오시는 길" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding USAGE_DAY_WEEK_AND_TIME}" Header="운행시간" FontWeight="Bold"/>
+                <DataGridTextColumn Binding="{Binding USAGE_AMOUNT}" Header="관광비용" FontWeight="Bold"/>
+                
+            </DataGrid.Columns>
+            
+        </DataGrid>
 
         <StatusBar Grid.Row="2" >
             <StatusBarItem Content="부산 구군별 관광지 List"/>
