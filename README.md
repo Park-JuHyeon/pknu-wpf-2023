@@ -103,5 +103,5 @@ width = "700">
 		- MahApps.Metro
 		
 <img
-src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/wpf-exam.gif" 
+src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-wpf-2023/main/Images/Find-Busantour.gif" 
 width = "700">
